@@ -49,7 +49,7 @@ Below is a reference to all WebSockets events that you will be listening for and
 Remember: all WebSockets events are received like the following:
 
 ```javascript
-this.socket.on('eventName', function(dataFromEvent) {
+this.state.socket.on('eventName', function(dataFromEvent) {
 	// Do something with dataFromEvent
 })
 ```
@@ -57,7 +57,7 @@ this.socket.on('eventName', function(dataFromEvent) {
 and all WebSockets events are sent like the following:
 
 ```javascript
-this.socket.emit('eventName', 'dataToSend');
+this.state.socket.emit('eventName', 'dataToSend');
 ```
 
 Note that we already handled connections for you and stored the socket object on `this.state` - the root state of the `<App />` component.
