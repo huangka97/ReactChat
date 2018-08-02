@@ -41,6 +41,7 @@ io.on('connection', socket => {
     }
     socket.username = String(username);
   });
+  
 
   socket.on('room', requestedRoom => {
     if (!socket.username) {

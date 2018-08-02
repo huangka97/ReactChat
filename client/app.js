@@ -20,12 +20,9 @@ class App extends React.Component {
       this.state.socket.emit("username",this.state.userName);
       this.join("Party Place");
       this.state.socket.emit("Entered room", this.state.roomName)
-
-
     });
 
     this.state.socket.on('errorMessage', message => {
-
       alert(message)
     });
   }
@@ -84,10 +81,8 @@ class ChatRoom extends React.Component {
     console.log(this.state.username)
     return (<section class="container">
       <h1 className="center">Chat</h1>
-
       <div className="row">
         <div className="col-md-6 box">
-
           <div className="textbox">
             <ul className="list1">
               {
@@ -110,19 +105,15 @@ class ChatRoom extends React.Component {
 }
 
 class ChatRoomSelector extends React.Component {
-
   render() {
     return (
-
       <ul className="nav nav-tabs">
         {this.props.rooms.map((event)=>event===this.props.roomName?
           <li className="active" role="presentation" onClick={()=>{this.props.onSwitch(event)}}>
             <a href="#">{event}</a>
           </li>:<li className="" role="presentation" onClick={()=>{this.props.onSwitch(event)}}><a href="#">{event}</a></li>)
         }
-
     </ul>)
-
   }
 }
 
